@@ -9,17 +9,19 @@ public class FizzBuzz {
         if (fizzBuzzList.isEmpty()) return result;
 
         for (Integer number : fizzBuzzList) {
-            if (number % 3 == 0) {
+            if (number % 3 == 0 && number % 5 == 0) {
+                result.add("FizzBuzz");
+            } else if (number % 3 == 0) {
                 result.add("Fizz");
-            } else if(number % 5 == 0) {
+            } else if (number % 5 == 0) {
                 result.add("Buzz");
-            }
-            else {
+            } else {
                 result.add(String.valueOf(number));
             }
         }
 
         return result;
     }
+
 
 }
