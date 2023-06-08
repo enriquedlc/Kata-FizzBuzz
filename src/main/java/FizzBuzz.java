@@ -9,12 +9,17 @@ public class FizzBuzz {
         if (fizzBuzzList.isEmpty()) return result;
 
         for (Integer number : fizzBuzzList) {
-            if (number % 3 == 0 && number % 5 == 0) {
+            boolean divisibleByThree = number % 3 == 0;
+            boolean containsThree = number.toString().contains("3");
+            boolean divisibleByFive = number % 5 == 0;
+            boolean containsFive = number.toString().contains("5");
+
+            if (divisibleByThree && divisibleByFive || containsThree && containsFive) {
                 result.add("FizzBuzz");
-            } else if (number % 3 == 0) {
-                result.add("Fizz");
-            } else if (number % 5 == 0) {
+            } else if (divisibleByFive || containsFive) {
                 result.add("Buzz");
+            } else if (divisibleByThree || containsThree) {
+                result.add("Fizz");
             } else {
                 result.add(String.valueOf(number));
             }
