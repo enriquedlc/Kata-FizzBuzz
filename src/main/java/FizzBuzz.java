@@ -11,7 +11,10 @@ public class FizzBuzz {
         for (Integer number : fizzBuzzList) {
             if (number % 3 == 0) {
                 result.add("Fizz");
-            } else {
+            } else if(number % 5 == 0) {
+                result.add("Buzz");
+            }
+            else {
                 result.add(String.valueOf(number));
             }
         }
