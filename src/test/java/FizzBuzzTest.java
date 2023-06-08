@@ -71,17 +71,17 @@ public class FizzBuzzTest {
 
     @Test
     public void should_return_fizz_if_number_contains_three() {
-        List<Integer> oneToOneHundredList = List.of(1, 23, 33, 44, 43, 55, 73);
+        List<Integer> paramList = List.of(1, 23, 33, 44, 43, 55, 73);
         List<String> expected = List.of("1", "Fizz", "Fizz", "44", "Fizz", "Buzz", "Fizz");
-        result = fizzBuzz.fizzBuzzMethod(oneToOneHundredList);
+        result = fizzBuzz.fizzBuzzMethod(paramList);
         assertEquals(expected, result);
     }
 
     @Test
     public void should_return_fizz_if_number_contains_five() {
-        List<Integer> oneToOneHundredList = List.of(1, 52, 53, 55, 73);
+        List<Integer> paramList = List.of(1, 52, 53, 55, 73);
         List<String> expected = List.of("1", "Buzz", "FizzBuzz", "Buzz", "Fizz");
-        result = fizzBuzz.fizzBuzzMethod(oneToOneHundredList);
+        result = fizzBuzz.fizzBuzzMethod(paramList);
         assertEquals(expected, result);
     }
 
