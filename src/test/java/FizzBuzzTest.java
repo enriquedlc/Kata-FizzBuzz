@@ -26,43 +26,35 @@ public class FizzBuzzTest {
      * @Return String[1, 2, Fizz, 4, Buzz, ... 100]
      */
 
-    private FizzBuzz fizzBuzz = new FizzBuzz();
-
-    // Lists
-    private List emptyList = new ArrayList<Integer>();
-
-    private List oneToThreeList = new ArrayList<Integer>();
-
-    private List oneToFiveList = new ArrayList<Integer>();
-
-    private List oneToOneTwentyList = new ArrayList<Integer>();
+    private final FizzBuzz fizzBuzz = new FizzBuzz();
 
     // Result list
     List<String> result = new ArrayList<>();
 
     @Test
     public void should_return_empty_array() {
-        result = fizzBuzz.fizzBuzzMethod(emptyList);
-        assertEquals(emptyList, result);
+        result = fizzBuzz.fizzBuzzMethod(List.of());
+        assertEquals(List.of(), result);
     }
 
     @Test
-    public void should_return_fizz_in_3rd_array_position() {
-        oneToThreeList = List.of(1, 2, 3);
+    public void should_return_fizz_if_number_divisible_by_three() {
+        List<Integer> oneToThreeList = List.of(1, 2, 3);
         List<String> expected = List.of("1", "2", "Fizz");
         result = fizzBuzz.fizzBuzzMethod(oneToThreeList);
         assertEquals(expected, result);
     }
 
     @Test
-    public void should_return_buzz_in_5th_array_position() {
-        oneToFiveList = List.of(1, 2, 3, 4, 5);
+    public void should_return_fizz_if_number_divisible_by_five() {
+        List<Integer> oneToFiveList = List.of(1, 2, 3, 4, 5);
         List<String> expected = List.of("1", "2", "Fizz", "4", "Buzz");
         result = fizzBuzz.fizzBuzzMethod(oneToFiveList);
         assertEquals(expected, result);
     }
 
-    @Test public void should_return_entire_list_correct_until_20() {
+    @Test public void should_return_entire_list_correct_until_twenty() {
+        List<Integer> oneToOneTwentyList = new ArrayList<>();
         for (int i = 1; i < 21; i++) {
             oneToOneTwentyList.add(i);
         }
