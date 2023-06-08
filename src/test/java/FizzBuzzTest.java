@@ -46,9 +46,7 @@ public class FizzBuzzTest {
 
     @Test
     public void should_return_fizz_in_3rd_array_position() {
-        oneToThreeList.add(1);
-        oneToThreeList.add(2);
-        oneToThreeList.add(3);
+        oneToThreeList = List.of(1, 2, 3);
         List<String> expected = List.of("1", "2", "Fizz");
         result = fizzBuzz.fizzBuzzMethod(oneToThreeList);
         assertEquals(expected, result);
@@ -56,11 +54,7 @@ public class FizzBuzzTest {
 
     @Test
     public void should_return_buzz_in_5th_array_position() {
-        oneToFiveList.add(1);
-        oneToFiveList.add(2);
-        oneToFiveList.add(3);
-        oneToFiveList.add(4);
-        oneToFiveList.add(5);
+        oneToFiveList = List.of(1, 2, 3, 4, 5);
         List<String> expected = List.of("1", "2", "Fizz", "4", "Buzz");
         result = fizzBuzz.fizzBuzzMethod(oneToFiveList);
         assertEquals(expected, result);
