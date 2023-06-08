@@ -62,7 +62,7 @@ public class FizzBuzzTest {
         }
         List<String> expected = List.of(
                 "1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz",
-                "11", "Fizz", "13", "14", "FizzBuzz", "16", "17", "Fizz", "19", "Buzz"
+                "11", "Fizz", "Fizz", "14", "FizzBuzz", "16", "17", "Fizz", "19", "Buzz"
                 // ... continue the pattern up to 100
         );
         result = fizzBuzz.fizzBuzzMethod(oneToTwentyList);
@@ -70,9 +70,9 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void should_return_fizz_if_number_contains_3() {
-        List<Integer> oneToOneHundredList = List.of(1, 23, 33, 42, 43, 55, 73);
-        List<String> expected = List.of("1", "Fizz", "Fizz", "42", "Fizz", "Buzz", "Fizz");
+    public void should_return_fizz_if_number_contains_three() {
+        List<Integer> oneToOneHundredList = List.of(1, 23, 33, 44, 43, 55, 73);
+        List<String> expected = List.of("1", "Fizz", "Fizz", "44", "Fizz", "Buzz", "Fizz");
         result = fizzBuzz.fizzBuzzMethod(oneToOneHundredList);
         assertEquals(expected, result);
     }

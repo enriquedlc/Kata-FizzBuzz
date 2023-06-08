@@ -9,9 +9,11 @@ public class FizzBuzz {
         if (fizzBuzzList.isEmpty()) return result;
 
         for (Integer number : fizzBuzzList) {
+            boolean containsThree = number.toString().contains("3");
+
             if (number % 3 == 0 && number % 5 == 0) {
                 result.add("FizzBuzz");
-            } else if (number % 3 == 0) {
+            } else if (number % 3 == 0 || containsThree) {
                 result.add("Fizz");
             } else if (number % 5 == 0) {
                 result.add("Buzz");
