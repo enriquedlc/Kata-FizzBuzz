@@ -35,7 +35,7 @@ public class FizzBuzzTest {
 
     private List oneToFiveList = new ArrayList<Integer>();
 
-    private List oneToOneHundredList = new ArrayList<Integer>();
+    private List oneToOneTwentyList = new ArrayList<Integer>();
 
     // Result list
     List<String> result = new ArrayList<>();
@@ -62,16 +62,16 @@ public class FizzBuzzTest {
         assertEquals(expected, result);
     }
 
-    @Test public void should_return_entire_list_correct_until_100() {
+    @Test public void should_return_entire_list_correct_until_20() {
         for (int i = 1; i < 21; i++) {
-            oneToOneHundredList.add(i);
+            oneToOneTwentyList.add(i);
         }
         List<String> expected = List.of(
                 "1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz",
                 "11", "Fizz", "13", "14", "FizzBuzz", "16", "17", "Fizz", "19", "Buzz"
                 // ... continue the pattern up to 100
         );
-        result = fizzBuzz.fizzBuzzMethod(oneToOneHundredList);
+        result = fizzBuzz.fizzBuzzMethod(oneToOneTwentyList);
         assertEquals(expected, result);
     }
 
