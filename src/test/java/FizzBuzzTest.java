@@ -3,8 +3,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class FizzBuzzTest {
 
     /**
@@ -32,9 +30,19 @@ class FizzBuzzTest {
     // Lists
     private List emptyList = new ArrayList<Integer>();
 
+    private List oneToThreeList = new ArrayList<Integer>();
+
     @Test
-    public void emptyParamArray() {
-        fizzBuzz.fizzBuzz(emptyList);
+    public void emptyArray() {
+        fizzBuzz.fizzBuzzMethod(emptyList);
+    }
+
+    @Test
+    public void oneToThreeArray() {
+        for (int i = 1; i < 3; i++) {
+            oneToThreeList.add(i);
+        }
+        fizzBuzz.fizzBuzzMethod(oneToThreeList);
     }
 
     public static void main (String[] args) {
@@ -42,7 +50,10 @@ class FizzBuzzTest {
         FizzBuzzTest fizzBuzzTest = new FizzBuzzTest();
 
         // Example 1
-        fizzBuzzTest.emptyParamArray();
+        fizzBuzzTest.emptyArray();
+
+        // Example 2
+        fizzBuzzTest.oneToThreeArray();
 
     }
 
