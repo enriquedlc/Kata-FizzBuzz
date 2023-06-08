@@ -10,13 +10,14 @@ public class FizzBuzz {
 
         for (Integer number : fizzBuzzList) {
             boolean containsThree = number.toString().contains("3");
+            boolean containsFive = number.toString().contains("5");
 
-            if (number % 3 == 0 && number % 5 == 0) {
+            if (number % 3 == 0 && number % 5 == 0 || containsThree && containsFive) {
                 result.add("FizzBuzz");
+            } else if (number % 5 == 0 || containsFive) {
+                result.add("Buzz");
             } else if (number % 3 == 0 || containsThree) {
                 result.add("Fizz");
-            } else if (number % 5 == 0) {
-                result.add("Buzz");
             } else {
                 result.add(String.valueOf(number));
             }
