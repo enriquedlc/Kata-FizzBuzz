@@ -1,6 +1,7 @@
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,17 +54,26 @@ public class FizzBuzzTest {
         assertEquals(expected, result);
     }
 
-    @Test public void should_return_entire_list_correct_until_twenty() {
-        List<Integer> oneToOneTwentyList = new ArrayList<>();
+    @Test
+    public void should_return_entire_list_correct_until_twenty() {
+        List<Integer> oneToTwentyList = new ArrayList<>();
         for (int i = 1; i < 21; i++) {
-            oneToOneTwentyList.add(i);
+            oneToTwentyList.add(i);
         }
         List<String> expected = List.of(
                 "1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz",
                 "11", "Fizz", "13", "14", "FizzBuzz", "16", "17", "Fizz", "19", "Buzz"
                 // ... continue the pattern up to 100
         );
-        result = fizzBuzz.fizzBuzzMethod(oneToOneTwentyList);
+        result = fizzBuzz.fizzBuzzMethod(oneToTwentyList);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void should_return_fizz_if_number_contains_3() {
+        List<Integer> oneToOneHundredList = List.of(1, 23, 33, 42, 43, 55, 73);
+        List<String> expected = List.of("1", "Fizz", "Fizz", "42", "Fizz", "Buzz", "Fizz");
+        result = fizzBuzz.fizzBuzzMethod(oneToOneHundredList);
         assertEquals(expected, result);
     }
 
