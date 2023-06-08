@@ -33,13 +33,15 @@ public class FizzBuzzTest {
 
     private List oneToThreeList = new ArrayList<Integer>();
 
+    private List oneToFiveList = new ArrayList<Integer>();
+
     // Result list
-    List<String> resultArray = new ArrayList<>();
+    List<String> result = new ArrayList<>();
 
     @Test
     public void should_return_empty_array() {
-        resultArray = fizzBuzz.fizzBuzzMethod(emptyList);
-        assertEquals(emptyList, resultArray);
+        result = fizzBuzz.fizzBuzzMethod(emptyList);
+        assertEquals(emptyList, result);
     }
 
     @Test
@@ -48,7 +50,19 @@ public class FizzBuzzTest {
         oneToThreeList.add(2);
         oneToThreeList.add(3);
         List<String> expected = List.of("1", "2", "Fizz");
-        List<String> result = fizzBuzz.fizzBuzzMethod(oneToThreeList);
+        result = fizzBuzz.fizzBuzzMethod(oneToThreeList);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void should_return_buzz_in_5th_array_position() {
+        oneToFiveList.add(1);
+        oneToFiveList.add(2);
+        oneToFiveList.add(3);
+        oneToFiveList.add(4);
+        oneToFiveList.add(5);
+        List<String> expected = List.of("1", "2", "Fizz", "4", "Buzz");
+        result = fizzBuzz.fizzBuzzMethod(oneToFiveList);
         assertEquals(expected, result);
     }
 
