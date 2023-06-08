@@ -31,6 +31,8 @@ public class FizzBuzzTest {
     // Lists
     private List emptyList = new ArrayList<Integer>();
 
+    private List oneToThreeList = new ArrayList<Integer>();
+
     // Result list
     List<String> resultArray = new ArrayList<>();
 
@@ -39,4 +41,15 @@ public class FizzBuzzTest {
         resultArray = fizzBuzz.fizzBuzzMethod(emptyList);
         assertEquals(emptyList, resultArray);
     }
+
+    @Test
+    public void should_return_fizz_in_3rd_array_position() {
+        oneToThreeList.add(1);
+        oneToThreeList.add(2);
+        oneToThreeList.add(3);
+        List<String> expected = List.of("1", "2", "Fizz");
+        List<String> result = fizzBuzz.fizzBuzzMethod(oneToThreeList);
+        assertEquals(expected, result);
+    }
+
 }
