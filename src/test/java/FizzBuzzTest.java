@@ -1,9 +1,10 @@
 import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class FizzBuzzTest {
+public class FizzBuzzTest {
 
     /**
      * Test of fizzBuzz method, of class FizzBuzz.
@@ -30,31 +31,12 @@ class FizzBuzzTest {
     // Lists
     private List emptyList = new ArrayList<Integer>();
 
-    private List oneToThreeList = new ArrayList<Integer>();
+    // Result list
+    List<String> resultArray = new ArrayList<>();
 
     @Test
-    public void emptyArray() {
-        fizzBuzz.fizzBuzzMethod(emptyList);
+    public void should_return_empty_array() {
+        resultArray = fizzBuzz.fizzBuzzMethod(emptyList);
+        assertEquals(emptyList, resultArray);
     }
-
-    @Test
-    public void oneToThreeArray() {
-        for (int i = 1; i < 3; i++) {
-            oneToThreeList.add(i);
-        }
-        fizzBuzz.fizzBuzzMethod(oneToThreeList);
-    }
-
-    public static void main (String[] args) {
-
-        FizzBuzzTest fizzBuzzTest = new FizzBuzzTest();
-
-        // Example 1
-        fizzBuzzTest.emptyArray();
-
-        // Example 2
-        fizzBuzzTest.oneToThreeArray();
-
-    }
-
 }
